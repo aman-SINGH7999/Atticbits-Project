@@ -1,7 +1,6 @@
 import React from 'react'
 import './Main.css';
-// import {Chart as ChartJS} from 'chart.js/auto';
-import {Bar, Line} from 'react-chartjs-2'
+
 import { useNavigate } from 'react-router-dom';
 
 
@@ -45,29 +44,7 @@ export default function Main() {
                 <div className='card-data'>Some Caregory</div>
                 <div className='card-data'>Some Caregory</div>
             </div>
-            <div className="card">
-                <Line 
-                    data={{
-                        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-                        datasets: [
-                        {
-                            label: "Dummy data",
-                            data: [400, 800, 600, 1200, 1500, 2000],
-                            borderColor: "rgb(7, 33, 33)",
-                            backgroundColor: "rgba(132, 179, 179, 0.2)",
-                            tension: 0.4, // Makes the line smooth
-                        },
-                        ],
-                    }}
-                    options={{
-                        responsive: true,
-                        plugins: {
-                        legend: { display: true },
-                        title: { display: true, text: "Monthly Revenue Growth" },
-                        },
-                    }}
-                />
-            </div>
+            
             <div className="card" onClick={handleClickOnDummyData}>
                 <div className='card-inner'>
                     <h3>DUMMY LIST</h3>
@@ -89,28 +66,6 @@ export default function Main() {
                 <div className='card-data'>Some Poll</div>
                 <div className='card-data'>Some Poll</div>
                 <div className='card-data'>Some Poll</div>
-            </div>
-            <div className="card">
-                <Bar
-                    data={{
-                        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-                        datasets: [
-                          {
-                            label: "Sales",
-                            data: [30, 45, 60, 20, 90, 100],
-                            backgroundColor: "rgba(14, 76, 76, 0.6)",
-                          },
-                        ],
-                      }}
-
-                    options={{
-                        responsive: true,
-                        plugins: {
-                          legend: { display: true },
-                          title: { display: true, text: "Monthly Sales Data" },
-                        },
-                      }}
-                />
             </div>
             
         </div>
