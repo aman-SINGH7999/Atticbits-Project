@@ -1,0 +1,83 @@
+.main-container{
+    grid-area: main;
+    background-color: #fff;
+    overflow-y: auto;
+    padding: 20px 20px;
+}
+
+.main-title{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.main-cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    margin: 20px;
+    min-width: 300px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card:first-child{
+    background-color: #bfcffc;
+}
+.card:nth-child(2){
+    background-color: #796666;
+}
+.card:nth-child(3){
+    background-color: #baece4;
+}
+.card:nth-child(4){
+    background-color: #f9dcdc;
+}
+.card:nth-child(5){
+    background-color: #d5fcdb;
+}
+.card:nth-child(6){
+    background-color: #dce496;
+}
+.card-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card-data{
+    padding: 5px;
+    border-radius: 5px;
+    background:  rgba(0,0,0,.1);
+    margin-top: 10px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .main-cards{
+        grid-template-columns: 1fr;
+        gap: 4px;
+        margin: 0;
+    }
+    .card{
+        margin: 10px 0;
+        min-width: 250px;
+        padding: 0;
+        overflow-y: hidden;
+    }
+    .main-container{
+        grid-area: main;
+        background-color: #fff;
+        overflow-y: auto;
+        padding: 0;
+    }
+}
