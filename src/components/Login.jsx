@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './Login.css';
-import { useDispatch } from 'react-redux';
-import { login } from '../features/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, selectUser } from '../features/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -10,6 +10,12 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const user = useSelector(selectUser);
+
+    useEffect(()=>{
+      if(user) navigate('/dashboard');
+    },[])
 
     const handleSubmit = (e)=>{
         e.preventDefault();
