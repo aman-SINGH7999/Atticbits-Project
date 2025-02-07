@@ -9,16 +9,16 @@ import { selectUser } from './features/userSlice';
 import PageNotFound from './components/PageNotFound';
 
 function App() {
+  
   const user = useSelector(selectUser);
-
 
   return (
     <>
     <Routes>
-      {user ? <Route path='/dashboard' element={<Dashboard />} /> : <Route path='/login' element={<Login />} />}
-      {user ? <Route path='/dummy-list' element={<DummyList />} /> : <Route path='/login' element={<Login />} />}
-      {!user ? <Route path='/login' element={<Login />} /> : <Route path='/dashboard' element={<Dashboard />} />}
-      {user ? <Route path='*' element={<PageNotFound />} /> : <Route path='/login' element={<Login />} />}
+    <Route path='/login' element={<Login />} />
+      <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/dummy-list' element={<DummyList />} />
+      <Route path='*' element={<PageNotFound />} />
     </Routes>
     </>
   );

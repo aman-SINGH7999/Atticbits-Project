@@ -7,6 +7,8 @@ import { IoIosNotifications } from "react-icons/io";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { FaCircleUser } from "react-icons/fa6";
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
 
 export default function DummyList() {
   const [dummyData, setDummyData] = useState([]);
@@ -17,9 +19,12 @@ export default function DummyList() {
   const [addedData, setAddedData] = useState();
   const [limit, setLimit] = useState(5);
   
-
-
   const navigate = useNavigate();
+  const user = useSelector(selectUser);
+
+  useEffect(()=>{
+          if(!user) navigate('/login');
+      }, [user])
 
   const handleClick = ()=>{
     navigate('/dashboard');
@@ -82,7 +87,7 @@ export default function DummyList() {
                   <button className='btn'>Submit</button>
                 </form>
                 { 
-                  status == 201 
+                  status === 201 
                   ? <div className="message">
                       Your data added successfully.
                       <div className='card-data'>

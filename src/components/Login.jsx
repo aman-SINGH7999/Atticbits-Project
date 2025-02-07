@@ -15,7 +15,7 @@ export default function Login() {
 
     useEffect(()=>{
       if(user) navigate('/dashboard');
-    },[])
+    },[user])
 
     const handleSubmit = (e)=>{
         e.preventDefault();

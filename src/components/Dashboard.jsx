@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Dashboard.css';
 import Sidebar from './Sidebar';
 import Main from './Main';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,8 +14,15 @@ import { MdMarkEmailUnread } from "react-icons/md";
 import { FaCircleUser } from "react-icons/fa6";
 
 
+
 export const Dashboard = () => {
     const [openSidebar, steOpenSidebar] = useState(false);
+    const user = useSelector(selectUser);
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        if(!user) navigate('/login');
+    }, [user])
 
   return (
     <div className=''>
