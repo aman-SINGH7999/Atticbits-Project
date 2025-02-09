@@ -25,6 +25,9 @@ export default function Login() {
         navigate('/dashboard');
     }
 
+
+
+
   return (
     <div className='login'>
         <form action="" className='login-form' onSubmit={(e)=> handleSubmit(e)}>
@@ -34,6 +37,7 @@ export default function Login() {
             <input type="password" placeholder='Password'value={password} onChange={(e)=>setPassword(e.target.value)} />
             <button type='submit' className='btn'>Submit</button>
         </form>
+        
     </div>
   )
 }

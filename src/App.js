@@ -7,6 +7,7 @@ import {Route, Routes} from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import PageNotFound from './components/PageNotFound';
+import Dashboard2 from './components2/Dashboard'
 
 function App() {
   
@@ -15,7 +16,8 @@ function App() {
   return (
     <>
     <Routes>
-    <Route path='/login' element={<Login />} />
+      <Route path='/' element={<Dashboard2 />} />
+      <Route path='/login' element={<Login />} />
       <Route path='/dashboard' element={<Dashboard />} />
       <Route path='/dummy-list' element={<DummyList />} />
       <Route path='*' element={<PageNotFound />} />

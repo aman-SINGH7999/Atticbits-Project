@@ -6,13 +6,13 @@ import { useDispatch } from 'react-redux';
 import { MdArrowForwardIos } from "react-icons/md";
 import { FaChevronLeft } from "react-icons/fa6";
 import { MdSpaceDashboard } from "react-icons/md";
-import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { FaProductHunt } from "react-icons/fa";
 import { IoIosSettings } from "react-icons/io";
 import { FaLayerGroup } from "react-icons/fa";
 import { MdCategory } from "react-icons/md";
 import { IoMdLogOut } from "react-icons/io";
 import { logout } from '../features/userSlice';
+import { RxDashboard } from "react-icons/rx";
 
 export default function Sidebar ({openSidebar, steOpenSidebar}) {
 const dispatch = useDispatch();
@@ -45,9 +45,9 @@ const handleLogout = ()=>{
                 <MdSpaceDashboard />
                 {openSidebar ? <div className='menu-text'>Dashboard</div> : null}
             </div>
-            <div className='menu-bar'> 
-                <MdOutlineProductionQuantityLimits />
-                {openSidebar ? <div className='menu-text'>Products</div> : null}
+            <div className='menu-bar' onClick={()=> navigate('/')}> 
+                <RxDashboard />
+                {openSidebar ? <div className='menu-text'>New Dashboard</div> : null}
             </div>
             <div className='menu-bar'>
                 <MdCategory />

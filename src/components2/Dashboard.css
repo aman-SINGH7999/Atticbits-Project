@@ -1,0 +1,11 @@
+.dashboard-container {
+    display: grid;
+    height: 100Vh;
+    width: 100vw;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    grid-template-columns: 2fr 6fr 3fr;
+    padding-top: 10px;
+    overflow-x: hidden;
+  }
